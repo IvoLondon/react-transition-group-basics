@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Modal from './component/Modal/Modal'
+import Transition from 'react-transition-group/Transition'
 import './App.css';
 
 class App extends Component {
@@ -24,7 +25,16 @@ class App extends Component {
             Edit <code>src/App.js</code> and save to reload.
           </p>
         </header>
-        {this.state.showModal ? <Modal /> : null}
+        <Transition 
+          in={this.state.showModal} 
+          timeout={2000}
+          mountOnEnter
+          unmountOnExit>
+          {state => (
+            
+            <Modal mode={state === 'exiting' ? 'ModalExit' : 'ModalEnter'} />
+          )}
+        </Transition>
         <button onClick={this.showModalHandler}>Toggle Modal</button>
       </div>
     );

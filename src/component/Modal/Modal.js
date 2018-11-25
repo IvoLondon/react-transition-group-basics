@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from './Modal.css'
+import './Modal.css'
 
 const Modal = () => {
 	return (
-		<div className={classes.Modal}>
+		<div className="Modal">
 			<h3>This is a sliding in Modal</h3>
 		</div>
 	)

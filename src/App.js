@@ -4,6 +4,17 @@ import Modal from './component/Modal/Modal'
 import './App.css';
 
 class App extends Component {
+  state = {
+    showModal : false,
+  }
+
+  showModalHandler = () => {
+    this.setState(prevState => {
+      return {
+        showModal : !prevState.showModal
+      }
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -13,7 +24,8 @@ class App extends Component {
             Edit <code>src/App.js</code> and save to reload.
           </p>
         </header>
-        <Modal />
+        {this.state.showModal ? <Modal /> : null}
+        <button onClick={this.showModalHandler}>Toggle Modal</button>
       </div>
     );
   }

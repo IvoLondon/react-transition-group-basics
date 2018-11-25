@@ -1,7 +1,30 @@
 .Modal {
 	width:30%;
 	margin:0 auto;
-	box-shadow: 2px 2px 2px #CCC;
+	box-shadow: 1px 2px 2px #f9f9f9;
 	background:#050505;
-	
+	color:#FFF;
+	padding:25px 30px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translateX(-50%) translateY(-50%);
+}
+
+@keyframes modalIn {
+	from {
+		opacity:0;
+		transform:translateX(-50%) translateY(-50%);
+	}
+	to {
+
+	}
+}
+@keyframes modalOut {
+	from {
+
+	}
+	to {
+
+	}
 }
